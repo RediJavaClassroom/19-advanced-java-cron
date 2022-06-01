@@ -22,8 +22,8 @@ public class User implements UserDetails {
   private Collection<String> authorities;
   private String userType;
 
-//  @OneToMany(mappedBy = "email", fetch = FetchType.LAZY)
-//  private List<ShortLinkEntity> shortlinks;
+  @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+  private List<ShortLinkEntity> shortlinks;
 
   protected User() {}
 
@@ -100,5 +100,9 @@ public class User implements UserDetails {
   @Override
   public boolean isEnabled() {
     return true;
+  }
+
+  public List<ShortLinkEntity> getShortlinks() {
+    return shortlinks;
   }
 }

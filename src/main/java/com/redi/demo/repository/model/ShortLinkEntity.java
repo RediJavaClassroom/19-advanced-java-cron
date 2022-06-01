@@ -1,7 +1,5 @@
 package com.redi.demo.repository.model;
 
-import org.hibernate.envers.Audited;
-
 import javax.persistence.*;
 import java.util.Date;
 
@@ -14,12 +12,11 @@ public class ShortLinkEntity {
   private String originalUrl;
 
   @ManyToOne()
+  @JoinColumn(name = "email")
   private User user;
 
   private Date created;
-
   private Date updated;
-
   protected ShortLinkEntity() {}
 
   public ShortLinkEntity(final String key, final String originalUrl) {
@@ -51,5 +48,13 @@ public class ShortLinkEntity {
 
   public void setOriginalUrl(String originalUrl) {
     this.originalUrl = originalUrl;
+  }
+
+  public Date getCreated() {
+    return created;
+  }
+
+  public Date getUpdated() {
+    return updated;
   }
 }

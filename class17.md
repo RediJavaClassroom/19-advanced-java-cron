@@ -34,6 +34,4 @@ Design
 * Users can upgrade their tiers if they want.
 * we create a new field in user database table for each user, and say how many short urls
 * they are permitted, we have different endpoints, which we can use to restrict different 
-* types of users.
-
-
+* types of users. 
